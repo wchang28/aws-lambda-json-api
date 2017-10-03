@@ -1,0 +1,30 @@
+{
+  "name": "aws-lambda-json-api",
+  "version": "0.0.1",
+  "description": "AWS Lambda JSON-based API Implementation",
+  "main": "./js/index.js",
+  "typings": "./js/index.d.ts",
+  "scripts": {},
+  "keywords": [
+    "AWS",
+    "Lambda",
+    "JSON",
+    "API",
+    "Router"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wchang28/aws-lambda-json-api.git"
+  },
+  "author": "Wen Chang",
+  "license": "MIT",
+  "dependencies": {
+    "@types/express": "^4.0.37",
+    "@types/node": "^8.0.31",
+    "@types/qs": "^6.5.0",
+    "aws-lambda-helper": "https://github.com/wchang28/aws-lambda-helper.git",
+    "express": "^4.16.1",
+    "express-json-api-routing-emulation": "https://github.com/wchang28/express-json-api-routing-emulation.git",
+    "qs": "^6.5.1"
+  }
+}
