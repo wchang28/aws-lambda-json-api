@@ -1,5 +1,5 @@
 import * as emul from "express-json-api-routing-emulation";
-import {factory as funcFactory, AWSLambdaFunction, AWSLambdaInvoker} from "aws-lambda-helper";
+import {lambda as lambdaFactory, AWSLambdaFunction, AWSLambdaInvoker} from "aws-lambda-helper";
 import * as express from "express";
 import * as qs from "qs";
 export {JSONApiRequestOptions, HTTPMethod, RESTReturn, HTTPHeaders} from "express-json-api-routing-emulation";
@@ -7,8 +7,8 @@ export {AWSLambdaFunction} from "aws-lambda-helper";
 
 export type JSONApiLambdaFunction = AWSLambdaFunction<emul.JSONApiRequestOptions, any, emul.RESTReturn>;
 
-export function lambdaFactory(router: express.Router, appParams?: {[key: string]: any;}) : JSONApiLambdaFunction {
-    return funcFactory((event: emul.JSONApiRequestOptions, context: any) => {
+export function lambda(router: express.Router, appParams?: {[key: string]: any;}) : JSONApiLambdaFunction {
+    return lambdaFactory((event: emul.JSONApiRequestOptions, context: any) => {
         return new emul.ExpressJSONApiRoutingEmulation(router, appParams).route(event, context);
     });
 }

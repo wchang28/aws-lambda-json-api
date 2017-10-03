@@ -3,12 +3,12 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var emul = require("express-json-api-routing-emulation");
 var aws_lambda_helper_1 = require("aws-lambda-helper");
 var qs = require("qs");
-function lambdaFactory(router, appParams) {
-    return aws_lambda_helper_1.factory(function (event, context) {
+function lambda(router, appParams) {
+    return aws_lambda_helper_1.lambda(function (event, context) {
         return new emul.ExpressJSONApiRoutingEmulation(router, appParams).route(event, context);
     });
 }
-exports.lambdaFactory = lambdaFactory;
+exports.lambda = lambda;
 var JSONApiRouteImpl = /** @class */ (function () {
     function JSONApiRouteImpl(rootApi, parentBaseUrl, mountPath) {
         this.rootApi = rootApi;

@@ -5,7 +5,7 @@ import * as express from "express";
 export { JSONApiRequestOptions, HTTPMethod, RESTReturn, HTTPHeaders } from "express-json-api-routing-emulation";
 export { AWSLambdaFunction } from "aws-lambda-helper";
 export declare type JSONApiLambdaFunction = AWSLambdaFunction<emul.JSONApiRequestOptions, any, emul.RESTReturn>;
-export declare function lambdaFactory(router: express.Router, appParams?: {
+export declare function lambda(router: express.Router, appParams?: {
     [key: string]: any;
 }): JSONApiLambdaFunction;
 export interface IJSONApiRoute {
